@@ -50,12 +50,14 @@ services:
       - internal
 
   wordpress:
-    depends_on:
-      - database
     container_name: ${CONTAINER_NAME}-wordpress
-    image: wordpress:6.5.5-fpm-alpine
+    build:
+      context: .
+      dockerfile: ./Dockerfile
     restart: unless-stopped
     env_file: .env
+    depends_on:
+      - database
     environment:
       WORDPRESS_DB_HOST: database:3306 # use the same name as database service
       WORDPRESS_DB_NAME: '${DATABASE_NAME}'
