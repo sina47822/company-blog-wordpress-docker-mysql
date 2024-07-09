@@ -51,3 +51,5 @@ src/plugins/elementor/
 src/plugins/woocommerce/
 src/plugins/wordpress-seo/
 src/plugins/persian-woocommerce/
+src/uploads/
+src/plugins/persian-woocommerce-not/

@@ -1,0 +1,33 @@
+@font-face {
+    font-family: dana;
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/dana/eot/dana-regular.eot');
+    src: url('../fonts/dana/eot/dana-regular.eot?#iefix') format("embedded-opentype"), 
+    url('../fonts/dana/woff2/dana-regular.woff2') format("woff2"),
+    url('../fonts/dana/woff/dana-regular.woff') format("woff"),
+    url('../fonts/dana/ttf/dana-regular.ttf') format("truetype")
+}
+
+body {
+    font-family: dana, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+h1, h2, h3, h4, h5, h6,a, div, li, p {
+    font-family: dana !important;
+}
+
+.dgwt-wcas-sf-wrapp input[type=search]::-webkit-input-placeholder,
+.dgwt-wcas-sf-wrapp input[type=search]::-moz-placeholder,.dgwt-wcas-sf-wrapp input[type=search]:-ms-input-placeholder
+{
+    line-height: 46px !important;
+    font-family: dana, sans-serif !important;
+}
+
+.herowp-page-footer span {
+    font-family: dana !important;
+}
+
+.elementor-icon-list-text{
+    font-family: dana !important;
+}

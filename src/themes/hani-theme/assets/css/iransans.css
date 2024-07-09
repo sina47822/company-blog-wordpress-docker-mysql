@@ -1,0 +1,36 @@
+@font-face {
+	font-family: IranSans;
+	font-style: normal;
+	font-weight: normal;
+	src: url('../fonts/iransans/eot/IRANSansWeb(FaNum).eot');
+	src: url('../fonts/iransans/eot/IRANSansWeb(FaNum).eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('../fonts/iransans/woff2/IRANSansWeb(FaNum).woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('../fonts/iransans/woff/IRANSansWeb(FaNum).woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('../fonts/iransans/ttf/IRANSansWeb(FaNum).ttf') format('truetype');
+}
+
+
+
+body {
+	font-family: IranSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+h1, h2, h3, h4, h5, h6,a, div, li, p {
+	font-family: IranSans !important;
+}
+
+.dgwt-wcas-sf-wrapp input[type=search]::-webkit-input-placeholder,
+.dgwt-wcas-sf-wrapp input[type=search]::-moz-placeholder,.dgwt-wcas-sf-wrapp input[type=search]:-ms-input-placeholder
+{
+	line-height: 46px !important;
+	font-family: IranSans, sans-serif !important;
+}
+
+.herowp-page-footer span {
+	font-family: IranSans !important;
+}
+
+
+.elementor-icon-list-text{
+	font-family: IranSans !important;
+}
