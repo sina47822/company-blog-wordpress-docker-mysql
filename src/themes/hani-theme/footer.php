@@ -5,6 +5,8 @@ $account_link = get_permalink(get_option('woocommerce_myaccount_page_id'));
 
 $footer = hani_settings('footer-el');
 
+$logo_website = hani_settings('select-logo');
+$logo_width_size = hani_settings('logo-width-size');
 
 ?>
     
