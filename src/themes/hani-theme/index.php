@@ -1,3 +1,5 @@
-<?php get_template_part('./parts/header');?>
+<?php get_header(); ?>
+
 <div>body</div>
-<?php get_template_part('./parts/footer');?>
+<?php get_footer(); ?>
+

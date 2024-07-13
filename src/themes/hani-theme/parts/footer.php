@@ -10,9 +10,9 @@ $account_link = get_permalink(get_option('woocommerce_myaccount_page_id'));
 <div>footer</div>
 
 
-    <div class="yasan-modal">
+    <div class="hani-modal">
         <div class="body" id="modal">
-            <i class="fal fa-xmark close-yasan-modal"></i>
+            <i class="fal fa-xmark close-hani-modal"></i>
             <div>
             <a href=" <?php echo esc_url(home_url()) ?>">
             <img src="<?php echo esc_url($logo['url'])?>" alt="<?php echo esc_attr(get_bloginfo('name'))?>" class="logo justify-content-center" width="100px">

@@ -66,7 +66,7 @@ echo $current_user->user_nicename;
                         <?php echo $current_user->user_nicename; ?>
                         </a>
                     <?php else : ?>
-                        <a href="" class="auth-btn yasan-modal-opener">
+                        <a href="" class="auth-btn hani-modal-opener">
                         <i class="fa-thin fa-user ms-1"></i>
                             ورود به حساب کاربری
                         </a>

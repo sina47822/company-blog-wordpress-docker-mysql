@@ -1,247 +1,1076 @@
-
-
-ul{
-    list-style-type: none;
-}
 a{
     text-decoration: none;
 }
-.bg-color-light{
-    background-color: #f8f9fb;
-    color: #333;
-    box-shadow: -1px 2px 4px 0px rgba(0,0,0,0.2);
-    transition: all 0.2s ease-in;
+
+.above-header {
+    background-color: #0082a9;
+    padding: 0px 16px ;
 }
-.bg-color-light:hover{
-    background-color: #ffffff;
-    color: #020202;
-    box-shadow: -1px 2px 4px 3px rgba(0,0,0,0.2);
+
+.above-header ul{
+    margin: 2px;
+    padding: 5px 0px;
 }
-.bg-color-white{
-    background-color: white;
-    color: #333;
+.above-header ul li{
+    font-size: 12px;
+
 }
-.bg-color-dark{
-    background-color: #333;
-    color: #f8f9fb;
-}
-.bg-color-main{
-    background-color: #f8f9;
-    color: green;
-}
-.bg-color-secondary{
-    background-color: green;
+.above-header ul , .above-header span , .above-header i{
     color: white;
 }
-.button-large{
-    padding: 12px 30px;
+header.main-header {
+    box-shadow: 0 5px 15px rgba(33,33,60,0.07);
 }
-.button-medium{
-    padding: 8px 20px;
+.hani-search-input , .form-control{
+    background: #faf8f8;
+    font-size: 14px;
+    min-width: 300px;
+    padding: 12px;
+    border-radius: 16px;
+    border-color: transparent;
+}
+.hani-search-input:focus{
+    box-shadow: none !important;
+    border-color: #373737;
+}
 
-}
-.button-small{
-    padding: 4px 10px;
-}
-.no-border{
+.header-search-submit {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #ccc;
+    color: white;
     border: 0;
-}
-.round-0{
-    border-radius: 0px;
-}
-.round-1{
-    border-radius: 5px;
-}
-.round-2{
-    border-radius: 10px;
-}
-.round-3{
-    border-radius: 20px;
-}
-.round-4{
-    border-radius: 30px;
-}
-
-.form-control{
-    background-color: #f8f9fb;
-    color: #333;
-    transition: all 0.2s ease-in;
-}
-.form-control:focus{
-    background-color: #ffffff;
-    color: #020202;
-    box-shadow: 0px 0px 4px 1px rgba(44, 25, 133, 0.2);
-}
-.header-top , .header-middle{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.header ul{
-    display: flex;
-    flex-direction: row;
-}
-.header ul li{
-    padding: 5px 10px;
-}
-.header ul li a{
-    color: black;
-}
-.header .logo-img{
-    width: 150px;
-}
-
-.yasan-modal{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .5);
-    visibility: hidden;
-    opacity: none;
-    transition: all .4s ease;
-
-}
-.auth-btn{
-    box-shadow: 0 5px 15px rgba(152, 152, 152, 0.274);
-    padding: 15px;
+    padding: 11px 20px;
     border-radius: 8px;
-    color: black;
-    text-decoration: none;
 }
-.auth-btn:hover{
-    color: rgb(255, 255, 255);
-    transition: all .3s ease;
-    background-color: rgb(103, 102, 102);
 
+a.auth-btn {
+    background: white;
+    color: #333;
+    box-shadow: 0 5px 15px rgba(33 , 25,65 ,0.07) !important;
+    padding: 16px 22px;
+    border-radius: 16px;
+    transition: all 0.3s ease-in;
 }
-.yasan-modal{
+a.auth-btn:hover {
+    background:#ccc;
+    color: white;
+}
+
+/* **********hani modal *************/
+.hani-modal{
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
     visibility: hidden;
-    opacity: none;
-    transition: all .4s ease;
-
+    opacity: 0;
+    transition: all 0.3s ease-in;
 }
-.yasan-modal.show{
+.hani-modal.show{
     visibility: visible;
     opacity: 1;
 }
-.yasan-modal .body{
+.hani-modal .body{
     text-align: center;
     position: absolute;
+    background: white;
+    min-height: auto;
     border-radius: 16px;
-    left: 40%;
-    top: 27%;
     width: 100%;
-    max-width: 350px;
-    min-height: 250px;
-    background-color:white;
-    padding: 30px 20px;
-
-}
-.yasan-modal .body i{
-    position: absolute;
-    top: 17px;
-    right: 20px;
-    cursor: pointer;
-}
-.yasan-modal .body .title{
+    top: 50%;
+    left: 50%;
     color: black;
+    padding: 30px 20px;
+    max-width: 350px;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    min-height: 250px;
+}
+
+.hani-modal .body .fa-xmark{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #e4e4e4;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+.hani-modal .body .desc{
     font-size: 18px;
-    font-weight: 800
+    font-weight: 700;
 
 }
 
-.yasan-modal .lost-password , .yasan-modal .sign-up{
-    text-decoration: none;
-    color: rgb(101, 128, 237);
+.hani-modal .body .lost-password{
+    font-size: 12px;
+    color: #333;
+    
 }
 
-.yasan-modal .submit {
-    background-color: #525252;
-    border: none;
-    border-radius: 16px;
-    padding: 8px 15px;
+.hani-modal .body .submit{
+    background-color: #888;
     color: white;
-    width: 100%;    
+    border-radius: 16px;
+    width: 100%;
+    padding: 12px 0px;
+    font-size: 14px;
+    border:0;
+    transition: all 0.3s ease-in;
+}
+.hani-modal .body .submit:hover{
+    opacity: 0.7;
+}
+.hani-modal .body .sign-up{
+    color: blue;
+    font-size: 12px;
 }
 
-.yasan-modal .submit:hover{
-    background-color:rgb(126, 126, 126) ;
+/* call header default */
+.phone-holder i{
+    font-size: 30px;
 }
-.yasan-modal .sign-up{
-    text-decoration: none;
-    color: rgb(52, 52, 53);
-    font-size: 16px;
+.phone-holder .number{
+    font-size: 18px;
     font-weight: 500;
 }
 
-.auth-link{
-    color: rgb(9, 49, 206);
-    text-decoration: none;
-    background-color: #e7e7e7;
-    box-shadow: 0 5px 15px rgba(152, 152, 152, 0.274);
-    padding: 5px 10px;
-    border-radius: 15px;
-}
-.auth-link:hover{
-    color: rgb(72, 72, 73);
-    box-shadow: 0 5px 15px rgba(163, 0, 0, 0.274);
+.phone-holder .description{
+    font-size: 14px;
+    font-weight: 200;
+
 }
 
- .cart-btn{
-    background-color: #5cab07a3;
-    padding: 10px 20px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.cart-btn{
+    background: #ddffe9;
+    color: #3ab566;
+    border-radius: 16px;
     width: 55px;
     height: 55px;
-    margin-left: 1rem;
-    box-shadow: 0 20px 20px rgba(100,200,200,.2);
-    color: rgb(249, 249, 248);
-}
-
-
-.cart-btn:hover{
-   box-shadow: 0 20px 20px rgba(34, 113, 113, 0.1);
-   background-color: #96f291;
-}
-
-.cart-btn i{
-    font-size: 20px;
-    font-weight: 400;
-
- }
-
- .btn-call-us i{
-    color: blue;
-    font-size: 2rem;
- }
- .btn-call-us span{
-    color: black;
-    font-size: 10px;
-
- }
- .btn-call-cruser{
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    margin-left: 15px;
-    padding: 10px 15px;
+}   
+.cart-btn i{
+    font-size: 30px;
 }
- .btn-call-cruser:hover{
-    border-color: #525252;
+
+/* blog */
+.top-section{
+    background-color:#0082a9 ;
+    padding: 50px 0 200px 0;
+    color: white;
+
+}
+.top-section.page-single{
+    padding: 50px 0 ;
+}
+
+.top-section .breadcrumbs {
+    font-size: 14px;
+}
+.top-section .breadcrumbs a{
+    color: white !important;
+}
+.top-section .main-title{
+    font-size: 24px;
+}
+.main-page-wrapper .content-section{
+    margin-top: -140px;
+}
+
+.single-page .content-section{
+    margin-top: unset !important;
+}
+.main-page-wrapper .content-section .container{
+    max-width: 900px;
+}
+
+.main-page-wrapper.single-page .content-section .container{
+    max-width: 1320px;
+}
+.main-page-wrapper.single-post .post-thumbnail img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0px -10px 44px -30px rgba(0,0,0,0.5) ;
+    border: 5px solid white;
+    height: 450px;
+
+}
+
+.main-page-wrapper .post-details i{
+    font-size: 16px;
+    margin-left: 5px;
+}
+.main-page-wrapper .post-details span{
+    font-size: 14px;
+}
+
+.post-content{
+    color: #333;
+    font-size: 16px;
+    line-height: 30px;
+}
+.post-content h2{
+    font-size: 20px;
+font-weight: 700;
+}
+
+.sticky-side{
+    position: absolute;
+    top: 0 ;
+    left: -250px ;
+}
+.sticky-side .post-tags , .sticky-side .post-share{
+    font-size: 14px;
+    border-right: 1px solid #d3d2d2 ;
+    padding-right: 8px;
+    cursor: pointer;
+}
+
+/* share modal */
+.share-modal .desc{
+    font-size: 16px !important ;
+    font-weight: 400 !important;
+    line-height: 20px;
+}
+
+.share-modal input{
+    width: 100%;
+    border: 1px dash #ccc;
+    padding: 8px;
+    font-size: 14px;
+    color: #666;
+}
+.share-modal a{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+    color: white;
+    margin: 8px;
+}
+
+/* comments */
+
+.section-title{
+    font-size: 24px;
+}
+
+.section-title span{
+    font-size: 18px;
+}
+.section-title .title{
+    background: white;
+    padding: 8px 0 8px 16px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::before{
+    height: 4px;
+    border-bottom: 2px dotted #ccc;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left:5px;
+    content:'';
+}
+.comment-form-comment{
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+}
+
+.comment-form input, .comment-form textarea{
+    border-radius: 16px;
+    padding: 8px !important;
+    background-color: #f8f9fb;
+    border-color: transparent !important ;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.comment-form input.submit{
+    padding: 10px 20px !important;
+    color: white;
+
+}
+
+.comment-list li{
+    background-color: white;
+    border: 2px dashed #dfdfdf;
+    padding: 16px;
+    border-radius: 16px;
+    margin-top: 16px;
+    position: relative;
+}
+
+.comment-metadata{
+    position: absolute;
+    top: 20px;
+    left: 90px;
+    font-size: 12px;
+}
+.comment-respont{
+    margin-top: 20px;
+}
+
+.comment-reply-link {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-size: 12px;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+#cancel-comment-reply-link{
+    font-size: 12px;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.comment-reply-title{
+    margin-bottom: 5px;
+}
+
+.comment-author{
+    display: flex;
+    align-items: center;
+}
+.comment-author img{
+    border-radius: 8px;
+    margin-left: 8px;
+    width: 60px;
+    height: 60px;
+}
+
+.comment-body p{
+    background-color: #f4f5fb;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 20px;
+}
+
+/* owl catousel nav */
+
+.owl-nav button{
+    position: absolute;
+    top: 20%;
+    background-color: white !important;
+    padding: 8px !important;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px !important;
+    box-shadow: 0 5px 15px rgba(33,35,60,0.07) !important;
+    transition: all 0.1s ease-in;
+}
+
+.owl-nav .owl-next{
+    left: 0;
+}
+.owl-nav .owl-prev{
+    right: 0;
+}
+
+.owl-nav button i{
+    font-size: 18px;
+    color: #333;
+    transition: all 0.1s ease-in;
+}
+
+.owl-nav button i:hover{
+    color: white;
+}
+
+.post-inner{
+    background-color: white;
+    box-shadow: 0 1px 7px -3px rgba(0,0,0,0.1);
+    padding: 5px;
+    border-radius: 8px;
+
+}
+.post-thumb img{
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 8px 20px !important;
+}
+
+.post-inner .title a{
+    font-size: 16px !important;
+    color: #333;
+    margin: 8px 0;
+}
+
+.post-thumb .date{
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 5px;
+    color: white;
+}
+
+/* woocommerce */
+.woo-bread .woocommerce-breadcrumb{
+    margin: 0 !important;
+}
+.hani-single-image .images{
+    width: 100% !important;
+    margin-bottom: 0 !important;
+}
+
+.hani-single-image img{
+    border-radius: 30px;
+}
+
+.hani-single-image{
+    background-color: #f3f3f3;
+    padding: 14px;
+    border-radius: 30px;
+    height: max-content;
+    position: relative;
+}
+
+.hani-single-info .product-title{
+    font-size: 24px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+.hani-single-info .product-subtitle{
+    font-size: 14px;
+    color: #7d7d7d;
+}
+
+.woocommerce-product-attributes{
+    border: 0 !important;
+}
+
+.woocommerce-product-attributes td{
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 10px 20px !important;
+}
+
+.wc-tabs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wc-tabs::before{
+    display: none !important;
+}
+.wc-tabs li{
+    border: 0 !important;
+    border-radius: 25px !important;
+    margin-left: 15px !important;
+    padding: 5px 25px !important;
+    transition: all 0.3s ease-in; 
+}
+.wc-tabs li.active a{
+    color: white !important;
+}
+
+.woocommerce-Tabs-panel--description{
+    background: #f8f9fb;
+    padding: 30px !important;
+    border-radius: 10px;
+
+}
+.woocommerce-Tabs-panel .title-holder{
+    background-color: #0082a9;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 20px;
+} 
+
+.woocommerce-Tabs-panel p{
+    font-size: 16px;
+    line-height: 28px;
+    width: 95%;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.woocommerce-Tabs-panel h2{
+    font-size: 22px;
+    line-height: 28px;
+    color: #212341;
+}
+
+
+.product-shipping-alert{
     border-radius: 15px;
-    box-shadow: 0 20px 20px rgba(34, 113, 113, 0.1);
-    background-color: #ebeaea;
+    background-color: #CCC;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0 10px 70px
+}
+
+.product-meta-box{
+    border-top: 1px solid #eeeded;
+    border-bottom: 1px solid #eeeded;
+    margin-bottom: 10px;
+    padding: 20px 25px;
+}
+
+.woocommerce-product-details__short-description .title{
+    border-top: 1px solid #eeeded;
+    color: #232323;
+    font-size: 16px;
+    margin: 20px 0;
+    padding-top: 5px;
+}
+
+.woocommerce-product-details__short-description p{
+    line-height: 25px;
+    color: #333;
+    font-size: 12px;
+}
+.woocommerce-product-details__short-description h2{
+    line-height: 25px;
+    color: #333;
+    font-size: 16px;
+}
+
+.hani-single-info .variation select{
+    background: #f8f9fb;
+    font-size: 14px;
+    padding: 5px 16px;
+    border-radius: 20px;
+    border:0 !important;
+}
+
+.hani-product-price{
+    background: #f3f3f3;
+    border-radius: 30px;
+    padding: 20px 30px;
+}
+.hani-product-price .price{
+    font-size: 16px;
+    font-weight: 700;
+    background: white;
+    padding: 10px 10px;
+    border-radius: 16px;
+    margin: 0;
+}
+.woocommerce-Price-amount{
+    margin-left: 10px;
+}
+
+
+.woocommerce div.product p.price ins, .woocommerce div.product span.price ins{
+    text-decoration: none;
+}
+.woocommerce-Price-currencySymbol{
+    font-size: 12px;
+}
+
+.hani-single-info .single_add_to_cart_button{
+    padding: 16px 10px !important;
+    border-radius: 14px !important;
+    font-size: 14px !important;
+    transition: all 0.2s ease-in !important;
+    
+}
+.hani-single-info .single_add_to_cart_button:hover{
+    background: #00a9a3 !important;
+    
+}
+.quantity-button{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+}
+
+.quantity-button button {
+    border: 0;
+    font-size: 20px;
+    margin: 0 8px;
+    width: 30px;
+    border-radius: 16px;
+}
+
+.quantity-button .qty{
+    background-color: white;
+    border: 0 !important;
+    border-radius: 50% !important;
+    padding: 8px;
+}
+
+.hani-product-meta{
+    position: absolute;
+    top: 30px;
+    z-index: 9;
+    right: -30px;
+}
+.hani-product-thumbs{
+    position: relative;
+}
+
+.hani-product-meta li{
+    margin-bottom: 5px;
+}
+.hani-product-meta button{
+    background-color: #212341;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+    transition: all 0.3s ease-in;
+}
+.hani-product-meta button:hover{
+    color: #212341;
+    background-color: rgb(245, 245, 245);
+
+}
+
+.section-title .title{
+    position: relative;
+    width: 100%;
+}
+
+.section-title .title h3{
+    font-size: 16px;
+}
+.section-title .title h6{
+    font-size: 22px;
+    margin-top: 10px;
+
+}
+.section-title .title::after{
+    content: '';
+    height: 5px;
+    width: calc(100% - 150px);
+    background-color: #f8f9fb;
+    position: absolute;
+    top: 50%;
+    right: 150px;
+}
+
+.product-entry{
+    background-color: white;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.1);
+    border-radius: 30px;
+    padding: 20px 18px;
+    position: relative;
+    overflow: hidden
+    ;
+}
+
+.product-entry .product-content a{
+    color: #333;
+}
+.product-entry .product-content h2{
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 10px;
+}
+
+.product-entry .woocommerce-Price-amount{
+    font-size: 18px !important ;
+    font-weight: 700 !important;
+}
+
+.product-entry:hover .product-hover a,.product-entry:hover .product-hover button{
+    background-color:#f8f9fb ;
+    color: #333;
+    border-radius: 16px;
+    font-size: 14px;
+    padding: 12px 14px !important;
+    transition: all 0.1s ease-in;
+}
+.product-entry:hover .product-hover a:hover,.product-entry:hover .product-hover button:hover{
+    background-color: #e9e9ea;
+}
+.product-hover{
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    border-radius: 30px;
+}
+.product-entry:hover .product-hover{
+    opacity: 1;
+    visibility: visible;
+}
+
+.post-inner{
+    padding: 10px;
+    transition: all 0.3s ease-in;
+}
+
+.post-inner:hover{
+    transform: scale(1.01);
+}
+
+.post-inner h2{
+    margin: 10px 0;
+    overflow: hidden;
+    max-width: 330px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.post-inner .post-meta i{
+    margin-left: 3px;
+}
+.post-inner .post-meta,.post-inner .post-footer{
+    font-size: 12px;
+    color: rgb(147, 3, 7);
+}
+
+.post-inner .post-thumbnail img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.post-inner .post-excerpt{
+    font-size: 12px;
+    line-height: 25px;
+    align-items: center;
+    color: #7c7c7c;
+}
+
+.post-inner .more{
+    transition: all 0.3 ease-in;
+}
+.post-inner:hover .more{
+    background-color: #0082a9;
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: white;
+}
+.post-inner:hover .more a{
+    color: white;
+}
+
+.pagination{
+    width: 100%;
+    display: block;
+    margin-top: 30px;
+}
+.pagination ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pagination ul li a{
+    background-color: #f2f2f2;
+    color: #333;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+    transition: all 0.2s ease-in;
+}
+.pagination ul li a:hover{
+    box-shadow: inset 5px 5px rgba(0,0,0,0.1);
+}
+.pagination ul li span{
+    color: #333;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.widgettitle{
+    color: #343333;
+    border-radius:16px;
+    padding: 5px 0px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration-style: solid ;
+    text-decoration-line: underline;
+    text-decoration-color: #0082a9;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+}
+
+.widget{
+    margin-bottom: 20px;
+}
+
+.widget ul li{
+    margin-bottom: 10px;
+    position: relative;
+    padding-right: 12px !important;
+}
+.widget ul li::before{
+    content: '';
+    display: inline-block;
+    background-color:#dfdfdf ;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: 14px;
+}
+
+.widget ul li a{
+    font-size: 13px;
+    border-radius: 10px;
+    padding: 8px 15px;
+}
+
+.search-form input , .woocommerce-product-search input{
+    border-radius: 16px !important;
+    padding: 12px !important;
+    background-color: #f8f9fb !important;
+    border-color: transparent !important;
+    font-size: 14px !important;
+    border-width: 1px !important;
+    width: 100% !important;
+}
+
+.search-form .search-submit, .woocommerce-product-search button{
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.woocommerce-ordering select.orderby{
+    background-color: #f8f9fb !important;
+    color: #333 !important;
+    padding: 10px 20px !important;
+    border: 0 !important;
+    border-radius: 10px !important;
+}
+
+.hani-cart-item{
+    background-color: white;
+    border-radius: 30px;
+    padding: 16px 22px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hani-cart-item img{
+    max-width: 160px;
+    height: 160px;
+    margin-left: 20px;
+    object-fit: cover;
+
+}
+.hani-cart-item .title{
+    font-size: 18px;
+    font-weight: 900;
+    color: #333;
+}
+
+.hani-cart-item .woocommerce-Price-amount{
+    font-size: 25px;
+    color: #0082a9;
+    font-weight: 900;
+}
+
+.hani-cart-item .quantity button {
+    border: 0;
+    font-size: 20px;
+    margin: 0 8px;
+    width: 30px;
+    border-radius: 16px;
+}
+
+.hani-cart-item .quantity .qty{
+    background-color: white;
+    border: 0 !important;
+    border-radius: 50% !important;
+    padding: 8px;
+}
+
+.hani-cart-item .quantity .qty:focus-visible{
+    border: 0 !important;
+    box-shadow: inset 5px 5px rgba(0,0,0,0.5);
+}
+
+.hani-cart-item .product-remove{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+}
+.hani-cart-item .product-remove .remove{
+    font-size: 12px !important;
+    border: 1px solid #d52727;
+    border-radius: 5px !important;
+    padding: 10px !important;
+    width: unset !important;
+    line-height: 4px !important;
+    transition: all 0.3s ease-in;
+}
+
+.hani-cart-coupon{
+    background-color: white;
+    padding: 16px 20px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.hani-cart-coupon .coupon input{
+    border-radius: 16px !important;
+    padding: 12px !important;
+    background-color: #efeff0;
+    border: 0 !important;
+    font-size: 14px;
+
+}
+.hani-cart-coupon .coupon button{
+    border-radius: 30px;
+    padding: 16px 20px;
+
+}
+
+.hani-cart-collaterals .subtotal{
+    background-color: #dfffea;
+    border-radius: 30px;
+    padding: 16px 20px;
+}
+
+.hani-cart-collaterals .subtotal .title{
+    font-size: px;
+    font-weight: 700;
+    color: #333;
+}
+
+.hani-cart-collaterals .subtotal .woocommerce-Price-amount{
+    font-weight: 700;
+    font-size: 25px;
+    color: #0082a9;
+}
+.hani-cart-collaterals .checkout-button{
+    width: 100%;
+    background-color: #2cab59 !important;
+    border-radius: 25px !important;
+    text-align: center;
+    padding: 24px !important;
+    transition: all 0.2s ease-in;
+}
+
+.hani-cart-collaterals .checkout-button:hover{
+    background-color: #238b47 !important;
+}
+
+.hani-cart-coupon .update-cart{
+    display: none !important;
+}
+
+.woocommerce-notices-wrapper , .woocommerce-notices-wrapper {
+    margin: 5px 0;
+}
+
+.woocommerce-notices-wrapper, .woocommerce-notices-wrapper .woocommerce-error{
+    background-color: red;
+    color: white;
+    border-top-color:yellow;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 254, 55, 0.17);
+}
+
+.woocommerce-notices-wrapper .woocommerce-message::before{
+    content: "\e015";
+    color: yellow;
+}
+
+/* checkout page */
+.user-information .woocommerce-billing-fields__field-wrapper .woocommerce-input-wrapper input{
+    border-radius: 10px;
+    padding: 10px;
+    border: 0;
+    background-color: #f2f2f2;
+}
+
+.user-information .select2-selection__rendered{
+    border-radius: 10px;
+    border: 0;
+    background-color: #f2f2f2;
+    padding: 5px 0;
+}
+
+.user-information .select2-selection{
+    background-color:transparent;
+    border-radius: 10px;
+    border: 0;
+    margin-bottom: 23px;
+    padding: 7px 0px 6px 0px;
+}
+
+.user-information .select2-selection__rendered span{
+    border: 0;
+}
+
+.user-information h3{
+    background-color: #0082a9;
+    color: white;
+    padding: 10px;
+    border-left-color: #00a9a3;
+    font-size: 22px;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+button#place_order{
+    padding: 10px 50px;
+    background-color: #0082a9 ;
+    color: white ;
+    font-size: 16px ;
+    font-weight: 700 ;
+    border-radius: 15px ;
+}
+
+textarea#order_comments{
+    border-radius: 10px;
+    border: 0;
+    background-color: #f2f2f2;
+    padding: 5px 10px;
 }

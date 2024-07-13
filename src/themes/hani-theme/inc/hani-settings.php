@@ -91,29 +91,58 @@ if( class_exists( 'CSF' ) ) {
     'title'  => 'footer',
     'fields' => array(
 
-    array(
-        'id'          => 'footer-type',
-        'type'        => 'select',
-        'title'       => 'انتخاب فوتر',
-        'chosen'      => true,
-        'placeholder' => 'Select an option',
-        'options'     => array(
-            'default'  => 'پیش فرض',
-            'elementor'  => 'المنتور',
-
-        ),
-        'default'     => 'default'
-        ),
-      // A textarea field
-      array(
-        'id'    => 'opt-textarea',
-        'type'  => 'textarea',
-        'title' => 'نمونه توضیحات',
-      ),
+        array(
+            'id'          => 'footer-select',
+            'type'        => 'select',
+            'title'       => 'انتخاب نوع فوتر',
+            'chosen'      => true,
+            'placeholder' => 'انتخاب یک فوتر',
+            'options'     => array(
+              'default'  => 'پیش فرض',
+              'elementor'  => 'المنتور',
+            ),
+            'default'     => 'default'
+          ),
+          array(
+            'id'          => 'footer-el',
+            'type'        => 'select',
+            'title'       => 'انتخاب فوتر',
+            'placeholder' => 'یک فوتر انتخاب کنید',
+            'options'     => $footers,
+            'dependency' => array('footer-select' , '==' , 'elementor'),
+    
+          ),
 
     )
   ) );
-
+  CSF::createSection( $prefix, array(
+    'title'  => 'شبکه های اجتماعی',
+    'fields' => array(
+  
+      array(
+        'id'    => 'hani-twitter',
+        'type'  => 'text',
+        'title' => 'توئیتر',
+      ),     
+      array(
+        'id'    => 'hani-telegram',
+        'type'  => 'text',
+        'title' => 'تلگرام',
+      ),
+      array(
+        'id'    => 'hani-whatsapp',
+        'type'  => 'text',
+        'title' => 'واتس اپ',
+      ),
+      array(
+        'id'    => 'hani-instagram',
+        'type'  => 'text',
+        'title' => 'اینستاگرام',
+      ),  
+  
+  
+    )
+  ) );
 }
 
 function hani_settings($key = ''){
