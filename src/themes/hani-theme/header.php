@@ -177,4 +177,3 @@ $hani_twitter = hani_settings('hani-twitter');
 
     <?php endif; ?>
 
-    <?php get_template_part( 'templates/page-title' ) ?>

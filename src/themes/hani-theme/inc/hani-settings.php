@@ -240,8 +240,21 @@ if( class_exists( 'CSF' ) ) {
   
     )
   ) );
-}
 
+CSF::createSection( $prefix, array(
+  'title'  => 'صفحه اصلی',
+  'fields' => array(
+
+    array(
+      'id'      => 'background-img',
+      'type'    => 'media',
+      'title'   => 'انتخاب بکگراند',
+      'library' => 'image',
+
+    ),
+    
+  )) );
+}
 function hani_settings($key = ''){
 
     $options = get_option('hani_settings');

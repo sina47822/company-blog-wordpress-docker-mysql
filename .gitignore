@@ -55,3 +55,8 @@ src/uploads/
 src/plugins/persian-woocommerce-not/
 yasanclinic-theme.zip
 src/plugins/breadcrumb-navxt/
+
+
+wordpress/wp-includes/
+wordpress/
+wordpress/wp-admin/

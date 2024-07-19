@@ -1,19 +1,27 @@
 <?php
 
-$header_type = hani_settings('header-type');
-$site_logo_header = hani_settings('logo-image-header');
-$site_main_page_title = hani_settings('main-page-title');
-$site_main_page_text = hani_settings('main-page-text');
-$site_main_page_img = hani_settings('main-page-img');
+ob_start(); // Start output buffering
+session_start();
 
-$auth_select_btn = hani_settings('auth-select-btn');
-$auth_text = hani_settings('text');
-$auth_link = hani_settings('link');
+$header_type = hani_settings('header-select');
+$main_phone = hani_settings('phone-number');
+$logo_website = hani_settings('select-logo');
+$logo_width_size = hani_settings('logo-width-size');
+$modal_type = hani_settings('modal-select');
+$auth_btn_text = hani_settings('auth-btn-text');
+$auth_btn_link = hani_settings('auth-btn-link');
+$phone_number = hani_settings('phone-number');
+
+
 $account_link = get_permalink(get_option('woocommerce_myaccount_page_id'));
-$main_color = hani_settings('main-color');
 
-$current_user = wp_get_current_user();
-echo $current_user->user_nicename;
+$header = hani_settings('header-el');
+
+$hani_telegram = hani_settings('hani-telegram');
+$hani_instagram = hani_settings('hani-instagram');
+$hani_whatsapp = hani_settings('hani-whatsapp');
+$hani_twitter = hani_settings('hani-twitter');
+
 ?>
 
 <!DOCTYPE html>
@@ -29,65 +37,30 @@ echo $current_user->user_nicename;
 <body <?php body_class()?>>
     <!-- elementor header -->
     <?php if ($header_type == 'elementor'): ?>
-        <h1>elementor</h1>
+        <?php the_content(); ?>
     <!-- default header -->
 
     <?php else: ?>
-        <header class="header" id="header">
-            <div class="header-top">
-                <div class="logo">
-                    <a href="<?php echo esc_attr(get_bloginfo('url')) ?>"><img class="logo-img" src="<?php echo esc_url($site_logo_header["url"]) ?>" alt="<?php echo esc_attr(get_bloginfo('name')) ?>"></a>
-                </div>
-                <div class="main-menu">
-                    <ul>
-                    <li><a href="#">درباره من</a></li>
-                    <li><a href="#">بلاگ</a></li>
-                    <li><a href="#">کتاب</a></li>
-                    <li><a href="#">نتایج کار با من</a></li>
+        <div class="header">
+            <div class="header-front-page">
+                <div class="background-color-solid">
+                    <div class=" d-flex align-items-center justify-content-between">
+                        <!----------- logo -------------->
+                        <a href="<?php echo esc_url( home_url( ) )?>">
+                            <img style="width : <?php echo esc_attr( $logo_width_size ) ?>px ; height : auto" src="<?php echo esc_url( $logo_website['url'] )?>" alt="<?php echo esc_attr( get_bloginfo( 'name') )?>">
+                        </a>
+                        <!----------- search -------------->
 
-
-                    </ul>
-                </div>
-                <div class="menu-button">
-                    <button class="button-medium round-2 bg-color-light no-border" type="button">همکاری با من</button>
+                        <div class="search-holder position-relative">
+                            <form class="d-flex" action="">
+                                <input class="form-control hani-search-input" type="text" placeholder="جستجو ...">
+                                <button class="header-search-submit" type="submit"><i class="fal fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="header-middle">
-                <div class="search-holder">
-                    <form class="d-flex" action="" method="get">
-                        <input class="form-control" type="text" placeholder="جستجو...">
-                        <button class="button-medium round-2 bg-color-light no-border" type="button"><i class="fal fa-search"></i></button>
-                    </form>
-                </div>
-                <?php if ($auth_select_btn == 'modal') : ?> 
-                    <?php if(is_user_logged_in()) : ?>
-                        <a href="<?php echo esc_url($account_link) ?>" class="auth-btn">
-                        <i class="fa-thin fa-user ms-1"></i>
-                        <?php echo $current_user->user_nicename; ?>
-                        </a>
-                    <?php else : ?>
-                        <a href="" class="auth-btn hani-modal-opener">
-                        <i class="fa-thin fa-user ms-1"></i>
-                            ورود به حساب کاربری
-                        </a>
-                    <?php endif ; ?>                  
-
-                <?php else : ?>
-                    <?php if(is_user_logged_in()) : ?>
-                        <a href="<?php echo esc_url($account_link) ?>" class="auth-btn">
-                        <i class="fa-thin fa-user ms-1"></i>
-                        <?php echo $current_user->user_nicename; ?>
-                        </a>
-                    <?php else : ?>
-                        <a href="<?php echo esc_url($auth_link) ?> " class="auth-btn">
-                        <i class="fa-thin fa-user ms-1"></i>
-                        حساب کاربری
-                        </a>    
-                    <?php endif ; ?>                   
-                <?php endif ; ?>
-                    
-            </div>
-        </header>
+        </div>
         
     <?php endif; ?>
 
